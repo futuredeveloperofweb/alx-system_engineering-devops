@@ -3,10 +3,10 @@
 
 while IFS= read -r contents
 do
-	usr=$(echo "$contents" | cut -f 1 -d ':')
+	user=$(echo "$contents" | cut -f 1 -d ':')
 	pass=$(echo "$contents" | cut -f 2 -d ':')
 	uid=$(echo "$contents" | cut -f 3 -d ':')
-	git=$(echo "$contents" | cut -f 4 -d ':')
+	gid=$(echo "$contents" | cut -f 4 -d ':')
 	u_info=$(echo "$contents" | cut -f 5 -d ':')
 	home=$(echo "$contents" | cut -f 6 -d ':')
 	command=$(echo "$contents" | cut -f 7 -d 'd')
