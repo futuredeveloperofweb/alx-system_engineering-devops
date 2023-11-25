@@ -2,7 +2,7 @@
 # a file that has some things to do
 
 terminator() {
-	rm/var/run/myscript.pid
+	rm /var/run/myscript.pid
 	exit
 }
 
