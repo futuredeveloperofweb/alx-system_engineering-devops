@@ -1,11 +1,10 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/types.h>
 
 /**
- * infinite - run a while loop
+ * infinite_while - run a while loop
  * Return: int
  */
 int infinite_while(void)
@@ -32,7 +31,7 @@ int main(void)
 		if (pid > 0)
 		{
 			printf("Zombie process created, PID: %d\n", pid);
-			sleep (1);
+			sleep(1);
 			c++;
 		}
 		else
