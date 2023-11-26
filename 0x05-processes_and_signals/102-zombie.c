@@ -4,7 +4,7 @@
 #include <sys/types.h>
 
 /**
- * infinite_while - run a while loop
+ * infinite_while - run an infinite while loop
  * Return: int
  */
 int infinite_while(void)
