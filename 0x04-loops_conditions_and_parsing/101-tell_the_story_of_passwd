@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # displays the content of the file /etc/passwd
 
-while IFS= read -r contents
+while IFS= read -r user pass uid gidu_info home command;
 do
-	user=$(echo "$contents" | cut -f 1 -d ':')
-	pass=$(echo "$contents" | cut -f 2 -d ':')
-	uid=$(echo "$contents" | cut -f 3 -d ':')
-	gid=$(echo "$contents" | cut -f 4 -d ':')
-	u_info=$(echo "$contents" | cut -f 5 -d ':')
-	home=$(echo "$contents" | cut -f 6 -d ':')
-	command=$(echo "$contents" | cut -f 7 -d 'd')
+	#user=$(echo "$contents" | cut -f 1 -d ':')
+	#pass=$(echo "$contents" | cut -f 2 -d ':')
+	#uid=$(echo "$contents" | cut -f 3 -d ':')
+	#gid=$(echo "$contents" | cut -f 4 -d ':')
+	#u_info=$(echo "$contents" | cut -f 5 -d ':')
+	#home=$(echo "$contents" | cut -f 6 -d ':')
+	#command=$(echo "$contents" | cut -f 7 -d 'd')
 
 	echo -n "The user $user is part of the $gid gang."
 	echo -n "lives in $home and rides $command."
