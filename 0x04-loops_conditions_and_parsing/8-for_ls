@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# a Bash script that displays some content
+
+val="$(ls)"
+for i in $val; do
+	after_dash="${i#*-}"
+	echo "$after_dash"
+done
