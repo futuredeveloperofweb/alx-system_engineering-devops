@@ -1,0 +1,12 @@
+1- Why terminating SSL at the load balancer level is an issue?
+  Terminating SSL (Secure Sockets Layer) at the load balancer level refers to the practice of decrypting encrypted SSL/TLS traffic at the load balancer before it is forwarded to the backend servers.
+
+2- Why having only one MySQL server capable of accepting writes is an issue?
+  Single Point of Failure (SPOF):
+Vulnerability to Outages: If the single write-enabled server experiences hardware failure, software issues, or network problems, all write operations to the database will be halted
+  Scalability Limitations:
+Performance Bottleneck: A single server can only handle a limited amount of write traffic. As your application's workload grows, the server may become overloaded
+  Maintenance Challenges:
+Downtime for Updates and Maintenance: Performing routine maintenance tasks, such as applying security patches or upgrading the MySQL server
+  Disaster Recovery Challenges:
+Data Loss Risk: If the single server experiences a catastrophic failure, there's a risk of losing all data since there's no other server actively replicating the data

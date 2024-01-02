@@ -1,0 +1,9 @@
+1- why adding a load balancer?
+  Load balancer distrebutes the work load of the system to muliple individual systems or group of systems to reduce the amount ofload on an individual system, and since we are using three servers we should use laod balancer.
+
+2- Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+  --In our shema the load balancer enabling an active-passives setup
+  --Active-Active load balancer:
+     Deploy two or more active system instances that can be used to improve scalability as well as provide high availability
+   --Active-Passive load balancer:
+     Deploy an active instance that handles requests and a passive instance that is on standby.
