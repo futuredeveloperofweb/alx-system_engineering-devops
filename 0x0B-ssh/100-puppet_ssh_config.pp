@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # make changes to our configuration file
 
+include stdlib
+
 file { '/etc/ssh/ssh_config':
  ensure => present,
 }
