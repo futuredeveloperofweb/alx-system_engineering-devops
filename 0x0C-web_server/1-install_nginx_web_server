@@ -7,7 +7,6 @@ sudo service nginx start
 sudo ufw allow 'Nginx HTTP'
 sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
-cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
 echo -e "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 sudo service nginx restart
 curl -I http://localhost
