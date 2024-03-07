@@ -1,34 +1,22 @@
+#!/usr/bin/python3
+'''a function that queries the Reddit API and prints the titles of
+the first 10 hot posts listed for a given subreddit'''
 import requests
-import sys
+from sys import argv
 
 
 def top_ten(subreddit):
-    """Print the titles of the 10 hottest posts on a given subreddit."""
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    headers = {
-        "User-Agent": "0x16-api_advanced:project:v1.0.0 (by /u/firdaus_cartoon_jr)"
-    }
-    params = {
-        "limit": 10
-    }
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
-    
-    if response.status_code == 200:
-        data = response.json().get("data")
-        children = data.get("children", [])
-        if children:
-            for child in children:
-                title = child.get("data", {}).get("title")
-                if title:
-                    print(title)
-        else:
-            print("No posts found for this subreddit.")
-    else:
-        print(f"Failed to retrieve data. Status code: {response.status_code}")
+    '''prints the titles of the first 10 hot posts listed for a
+    given subreddit'''
+    user = {'User-Agent': 'Lizzie'}
+    url = requests.get('https://www.reddit.com/r/{}/hot/.json?limit=10'
+                       .format(subreddit), headers=user).json()
+    try:
+        for post in url.get('data').get('children'):
+            print(post.get('data').get('title'))
+    except Exception:
+        print(None)
 
 
-if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Please pass an argument for the subreddit to search.")
-    else:
-        top_ten(sys.argv[1])
+if __name__ == "__main__":
+    top_ten(argv[1])
