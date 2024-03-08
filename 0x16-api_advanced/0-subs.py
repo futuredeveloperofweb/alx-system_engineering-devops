@@ -15,11 +15,12 @@ def number_of_subscribers(subreddit):
             data = response.json().get('data')
             if data:
                 subscribers = data.get('subscribers', 0)
-                return int(subscribers) 
+                return int(subscribers)
         else:
             return 0
     except Exception as e:
         return 0
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
